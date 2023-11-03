@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Primary;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -28,6 +30,9 @@ public class Book {
     @ManyToOne
     @JoinTable(name="author_id")
     private long author_id;
+
+    @ManyToMany()
+    private List<Customer> buyers;
 
 
 
