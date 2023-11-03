@@ -19,7 +19,7 @@ import java.util.List;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
     @Column(name="book_title",nullable = false)
     private String title;
     private String isbn;
@@ -29,7 +29,7 @@ public class Book {
     private int quantity_in_stock;
     @ManyToOne
     @JoinTable(name="author_id")
-    private long author_id;
+    private Author author;
 
     @ManyToMany()
     private List<Customer> buyers;

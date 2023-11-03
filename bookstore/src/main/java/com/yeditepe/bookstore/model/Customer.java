@@ -1,15 +1,17 @@
 package com.yeditepe.bookstore.model;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ManyToAny;
 
 import java.util.List;
-
+@Entity
+@Data
 public class Customer {
-
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String first_name;
     private String last_name;
 

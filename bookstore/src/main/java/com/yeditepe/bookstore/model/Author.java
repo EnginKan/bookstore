@@ -10,7 +10,7 @@ import java.util.List;
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
     private String first_name;
     private String last_name;
     private String biography;

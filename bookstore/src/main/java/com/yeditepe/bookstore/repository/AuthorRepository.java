@@ -6,8 +6,8 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 import java.util.Set;
 
-public interface AuthorRepository extends CrudRepository<Author,Long> {
+public interface AuthorRepository extends CrudRepository<Author,Integer> {
 
-    public List<Author> getByLast_name(String last_name);
-    public Set<Author> getByBiography(String biography);
+    //public List<Author> getByLast_name(String last_name);
+    //public Set<Author> getByBiography(String biography);
 }
