@@ -28,7 +28,7 @@ public class Book {
     private BigDecimal price;
     private int quantity_in_stock;
     @ManyToOne
-    @JoinTable(name="author_id")
+    @JoinTable(name="author_book")
     private Author author;
 
     @ManyToMany()
