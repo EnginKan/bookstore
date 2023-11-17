@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.logging.Logger;
 
 @RestController
-@RequestMapping("customer_api")
+@RequestMapping("authorapi")
 public class AuthorController {
     @Autowired
     private AuthorRepository authorRepository;
