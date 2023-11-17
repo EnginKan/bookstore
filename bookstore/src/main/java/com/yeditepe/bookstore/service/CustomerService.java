@@ -1,16 +1,17 @@
 package com.yeditepe.bookstore.service;
 
 import com.yeditepe.bookstore.model.Customer;
+import com.yeditepe.bookstore.service.dto.CustomerDTO;
 
 import java.util.List;
 
 public interface CustomerService {
 
-    public List<Customer> getAll();
+    public List<CustomerDTO> getAll();
 
-    public Customer getCustomerByID(int customer_id);
+    public CustomerDTO getCustomerByID(int customer_id);
 
-    public List<Customer> getCustomerBySurname(String surname);
+    public List<CustomerDTO> getCustomerBySurname(String surname);
 
 
 }

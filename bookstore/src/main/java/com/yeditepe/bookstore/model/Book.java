@@ -27,6 +27,13 @@ public class Book {
 
     private BigDecimal price;
     private int quantity_in_stock;
+
+    public Book(String title, String isbn, BigDecimal price) {
+        this.title = title;
+        this.isbn = isbn;
+        this.price = price;
+    }
+
     @ManyToOne
     @JoinTable(name="author_book")
     private Author author;

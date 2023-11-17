@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("customerapi")
+@RequestMapping("/customerapi")
 public class CustomerController {
     private CustomerService customerService;
 
@@ -27,8 +27,19 @@ public class CustomerController {
 
     }
     @GetMapping("getbyid/{id}")
-    public ResponseEntity<CustomerDTO> getById(@PathVariable int id){
+    public ResponseEntity<CustomerDTO> getById(@PathVariable(name="id") int id){
         CustomerDTO dto=customerService.getCustomerByID(id);
         return ResponseEntity.ok(dto);
+    }
+
+
+    @GetMapping("getbysurname/{surname}")
+    public ResponseEntity<List<CustomerDTO>> getBySurname(
+            @PathVariable(name="surname") String surname){
+        List<CustomerDTO> customers=customerService.getCustomerBySurname("Kandiran");
+        if(customers.size()>0)
+            return ResponseEntity.ok(customers);
+        else
+            return ResponseEntity.ok(null);
     }
 }

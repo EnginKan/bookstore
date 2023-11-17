@@ -23,6 +23,7 @@ public class CustomerServiceImpl implements CustomerService{
     private final CustomerMapper mapper=new CustomerMapper();
 
     private CustomerServiceImpl(CustomerRepository customerRepository) {
+
         this.customerRepository = customerRepository;
     }
 
@@ -43,7 +44,7 @@ public class CustomerServiceImpl implements CustomerService{
         Optional<Customer> customer=customerRepository.findById(customer_id);
         if(customer.isPresent())
             dto= modelMapper.map(customer.get(),CustomerDTO.class);
-        return null;
+        return dto;
 
 
     }

@@ -11,6 +11,6 @@ public interface CustomerRepository extends CrudRepository<Customer,Integer> {
 
     public List<Customer> findBySurname(String surname);
 
-    public List<Customer> findByNameFirstTwo(String name);
+    //public List<Customer> findByNameFirstTwo(String name);
 
 }
