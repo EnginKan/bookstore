@@ -1,5 +1,6 @@
 package com.yeditepe.bookstore.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,11 +14,14 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Schema(name="Author", description = "Author Entity")
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Schema(description="Name of Author", example = "Orhan")
     private String first_name;
+    @Schema(description="LastName of Author", example = "Pamuk")
     private String last_name;
     private String biography;
     @OneToMany(mappedBy = "author")

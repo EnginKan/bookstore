@@ -22,7 +22,7 @@ public class CustomerServiceImpl implements CustomerService{
     private ModelMapper modelMapper;
     private final CustomerMapper mapper=new CustomerMapper();
 
-    private CustomerServiceImpl(CustomerRepository customerRepository) {
+    public CustomerServiceImpl(CustomerRepository customerRepository) {
 
         this.customerRepository = customerRepository;
     }

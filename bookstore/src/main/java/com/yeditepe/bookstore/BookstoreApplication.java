@@ -6,6 +6,9 @@ import com.yeditepe.bookstore.model.Customer;
 import com.yeditepe.bookstore.repository.AuthorRepository;
 import com.yeditepe.bookstore.repository.BookRepository;
 import com.yeditepe.bookstore.repository.CustomerRepository;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -16,7 +19,7 @@ import org.springframework.context.annotation.Bean;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
+@OpenAPIDefinition
 @SpringBootApplication
 public class BookstoreApplication implements CommandLineRunner{
 @Autowired
@@ -56,6 +59,10 @@ private AuthorRepository authorRepository;
 		book1.setBuyers(customers);
 		bookRepository.save(book1);
 
+	}
+	@Bean
+	public OpenAPI getOpenAPI() {
+		return new OpenAPI().info(new Info().title("BookStore API").version("1.0"));
 	}
 }
 
